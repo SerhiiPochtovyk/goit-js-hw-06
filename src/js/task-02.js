@@ -1,8 +1,16 @@
 const ingredients = [
-  'Potatoes',
-  'Mushrooms',
-  'Garlic',
-  'Tomatos',
-  'Herbs',
-  'Condiments',
+  "Potatoes",
+  "Mushrooms",
+  "Garlic",
+  "Tomatos",
+  "Herbs",
+  "Condiments",
 ];
+
+const ul = document.getElementById("ingredients"); // Знаходимо список ul по його id
+ingredients.forEach(ingredient => { // Проходимо по кожному інгредієнту в масиві
+  const li = document.createElement("li"); // Створюємо новий елемент li
+  li.innerText = ingredient; // Встановлюємо текстовий вміст елементу li
+  li.classList.add("item"); // Додаємо клас "item" до елементу li
+  ul.appendChild(li); // Додаємо елемент li до списку ul
+});
