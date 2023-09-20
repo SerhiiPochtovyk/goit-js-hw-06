@@ -13,11 +13,19 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector(".gallery");
-let galleryHTML = "";
+// const gallery = document.querySelector(".gallery");
+// let galleryHTML = "";
 
-images.forEach((image) => {
-  galleryHTML += `<li><img src="${image.url}" alt="${image.alt}"></li>`;
-});
+// images.forEach((image) => {
+//   galleryHTML += `<li><img src="${image.url}" alt="${image.alt}"></li>`;
+// });
+
+// gallery.insertAdjacentHTML("beforeend", galleryHTML);
+
+const gallery = document.querySelector(".gallery");
+
+const galleryHTML = images
+  .map((image) => `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+  .join("");
 
 gallery.insertAdjacentHTML("beforeend", galleryHTML);
